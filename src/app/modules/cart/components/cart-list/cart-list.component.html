@@ -1,0 +1,11 @@
+<div *ngFor="let item of cartItems" class="cart-item">
+  <div class="cart-item-image"><img [src]="item.image"></div>
+  <div class="cart-item-title">{{item.name}}</div>
+  <div class="cart-item-price item-price">
+    <p *ngIf="item.discount" class="new-price">$ {{item.price | discountPrice : item.discount}} </p>
+    <p [ngClass]="{'old-price': item.discount, 'new-price': !item.discount}">$ {{item.price}}</p>
+  </div>
+  <app-cart-item-control [item]="item"
+                         (decreaseClick)="decrease($event)"
+                         (increaseClick)="increase($event)"></app-cart-item-control>
+</div>

@@ -1,0 +1,23 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #000;
+  &:nth-child(1) {
+    border-top: 1px solid #000;
+  }
+}
+.cart-item-image {
+  margin-right: 50px;
+  img {
+    height: 60px;
+  }
+}
+.cart-item-title {
+  width: 200px;
+  margin-right: 50px;
+}
+
+.cart-item-price {
+  margin-right: 50px;
+}

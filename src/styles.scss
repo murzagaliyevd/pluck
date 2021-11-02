@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.item-img-container {
+  text-align: center;
+  .item-img {
+    max-height: 200px;
+  }
+}
+.item-title {
+  font-size: 25px;
+}
+.item-description {
+  font-size: 12px;
+}
+.item-price {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1px;
+  .old-price {
+    text-decoration: line-through;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+.item-cart-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #e69600;
+  color: #fff;
+}

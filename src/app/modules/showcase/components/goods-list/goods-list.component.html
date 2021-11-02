@@ -1,0 +1,14 @@
+<div class="goods-list">
+  <div *ngFor="let item of goods | async" class="goods-list-item" (click)="onGoodsClick(item)">
+    <div class="item-img-container">
+      <img class="item-img" [src]="item.image">
+    </div>
+    <p class="item-title">{{ item.name }}</p>
+    <div class="item-price">
+      <p *ngIf="item.discount" class="new-price">$ {{item.price | discountPrice : item.discount}} </p>
+      <p [ngClass]="{'old-price': item.discount, 'new-price': !item.discount}">$ {{item.price}}</p>
+    </div>
+    <button class="item-cart-btn" (click)="addToCart(item); $event.stopPropagation();">Add to cart</button>
+  </div>
+</div>
+

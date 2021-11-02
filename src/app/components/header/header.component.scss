@@ -1,0 +1,30 @@
+.header {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  font-size: 20px;
+  .header-logo-container {
+    grid-column: 2;
+    text-align: center;
+    .header-logo {
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+  .header-cart-container {
+    grid-column: 3;
+    text-align: right;
+    .header-cart-btn {
+      font-size: inherit;
+      cursor: pointer;
+      height: 50px;
+      border: none;
+      outline: none;
+      background-color: #e69600;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<h1 align="center">Cart</h1>
+<div *ngIf="cart$ | async as cart" class="cart">
+  <app-cart-list [cartItems]="cart.items"
+                 (increaseClick)="increase($event)"
+                 (decreaseClick)="decrease($event)"></app-cart-list>
+  <ng-container *ngIf="cart.amount > 0 else emptyCart">
+    <p class="cart-total">Total: ${{cart.amount}}</p>
+    <button class="cart-proceed-btn" (click)="proceed()">Proceed to checkout</button>
+  </ng-container>
+  <ng-template #emptyCart>
+    <p>Cart is empty</p>
+  </ng-template>
+  <ng-container #modalContainer></ng-container>
+</div>

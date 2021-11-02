@@ -1,0 +1,18 @@
+<div *ngIf="goodsDetails as item" class="item-container">
+  <div class="item-img-container">
+    <img class="item-img" [src]="item.image">
+  </div>
+  <p class="item-title">{{ item.name }}</p>
+  <p class="item-description" [innerHTML]="item.description"></p>
+  <div class="item-price">
+    <p *ngIf="item.discount" class="new-price">$ {{item.price | discountPrice : item.discount}} </p>
+    <p [ngClass]="{'old-price': item.discount, 'new-price': !item.discount}">$ {{item.price}}</p>
+  </div>
+  <app-cart-item-control *ngIf="cartItem"
+                         [item]="cartItem"
+                         (decreaseClick)="decrease()"
+                         (increaseClick)="increase()"></app-cart-item-control>
+  <div *ngIf="!cartItem" class="item-btn-container">
+    <button class="item-cart-btn" (click)="increase()">Add to cart</button>
+  </div>
+</div>

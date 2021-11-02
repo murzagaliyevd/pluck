@@ -1,0 +1,8 @@
+<div class="header">
+  <div class="header-logo-container">
+    <a routerLink="/"><img src="/assets/images/logo-1.png" class="header-logo"></a>
+  </div>
+  <div class="header-cart-container">
+    <button class="header-cart-btn" routerLink="/cart">Cart <span *ngIf="cart$ | async"> (${{ (cart$ | async )?.amount  }})</span></button>
+  </div>
+</div>

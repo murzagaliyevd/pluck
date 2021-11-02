@@ -1,0 +1,17 @@
+<div class="banner">
+  <ng-container *ngFor="let banner of banners; let i = index">
+    <ng-container *ngIf="i === index && (isContentLoaded$ | async)">
+      <img class="banner-image" [src]="banner.path"  @carouselAnimation>
+      <span class="banner-text" [ngClass]="{
+      'bottom-right': banner.zone === 'bottom-right',
+      'top-right': banner.zone === 'top-right'
+      }">{{banner.text}}</span>
+    </ng-container>
+  </ng-container>
+  <button class="banner-control-btn prev-btn" (click)="prev()">
+    <span class="arrow arrow-prev"></span>
+  </button>
+  <button class="banner-control-btn next-btn" (click)="next()">
+    <span class="arrow arrow-next"></span>
+  </button>
+</div>
